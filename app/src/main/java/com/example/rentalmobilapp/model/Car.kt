@@ -11,6 +11,7 @@ data class Car (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val address: String
+    val address: String,
+    val type: String
 
 ) : Parcelable
