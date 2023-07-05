@@ -21,13 +21,13 @@ class CarViewModel(private val repository: CarRepository): ViewModel() {
     }
 
     fun update (car: Car) = viewModelScope.launch {
-        repository.deleteCar(car)
+        repository.updateCar(car)
     }
 }
 class CarViewModelFactory(private val repository: CarRepository): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom((CarViewModel::class.java))) {
-            return super.create(modelClass)
+            return CarViewModel(repository) as T
         }
 
         throw IllegalArgumentException("Unknown viewModel class")

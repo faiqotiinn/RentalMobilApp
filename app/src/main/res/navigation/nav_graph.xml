@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    android:label="@string/app_name"
     app:startDestination="@id/FirstFragment">
 
     <fragment
@@ -22,7 +21,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.rentalmobilapp.ui.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Tambahkan Tempat Rental"
         tools:layout="@layout/fragment_second">
 
         <action

@@ -2,6 +2,7 @@ package com.example.rentalmobilapp.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentalmobilapp.R
 import com.example.rentalmobilapp.application.CarApp
 import com.example.rentalmobilapp.databinding.FragmentFirstBinding
+import kotlin.math.log
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -50,6 +52,7 @@ class FirstFragment : Fragment() {
         binding.dataRecyclerView.adapter = adapter
         binding.dataRecyclerView.layoutManager = LinearLayoutManager(context)
         carViewModel.allCar.observe(viewLifecycleOwner) { Car ->
+            Log.d("Ubah", Car.count().toString())
             Car.let {
                 if (Car.isEmpty()) {
                     binding.EmptytextView.visibility = View.VISIBLE

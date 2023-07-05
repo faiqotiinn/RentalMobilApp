@@ -1,7 +1,9 @@
 package com.example.rentalmobilapp.ui
 
 import android.content.Context
+import android.location.Address
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,7 @@ import com.example.rentalmobilapp.R
 import com.example.rentalmobilapp.application.CarApp
 import com.example.rentalmobilapp.databinding.FragmentSecondBinding
 import com.example.rentalmobilapp.model.Car
+import kotlin.math.log
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -48,39 +51,39 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         car = args.car
-        //kita cek jika car null maka tampilan default nambah rental mobil
-        //jika car tidak null tampilan sedikit berubah ada tombol hapus
         if (car != null){
             binding.deleteButton.visibility = View.VISIBLE
-            binding.saveButton.text = "Ubah"
+            binding.saveButton.text = ("Ubah")
             binding.nameEditText.setText(car?.name)
             binding.addressEditText.setText(car?.address)
-            binding.jenismobileditTextText.setText(car?.type)
+            binding.typecarEditText.setText(car?.typecar)
         }
         val name = binding.nameEditText.text
         val address = binding.addressEditText.text
-        val type = binding.jenismobileditTextText.text
+        val typecar = binding.typecarEditText.text
 
         binding.saveButton.setOnClickListener {
             if (name.isEmpty()){
                 Toast.makeText(context, "nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
 
-            } else if (name.isEmpty()) {
+            } else if (address.isEmpty()) {
                 Toast.makeText(context, "alamat tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            } else if (name.isEmpty()) {
-                    Toast.makeText(context, "jenismobil tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            } else if (typecar.isEmpty()) {
+                    Toast.makeText(context, "jenis mobil tidak boleh kosong", Toast.LENGTH_SHORT).show()
                 }
 
-            else{
-                if (car == null){
-                    val car = Car (car?.id!!, name.toString(), address.toString(), type.toString())
+            else {
+                if (car == null) {
+                    val car = Car(0, name.toString(), address.toString(), typecar.toString())
                     carViewModel.insert(car)
-                }else{
-                    val car = Car (car?.id!! , name.toString(), address.toString(), type.toString())
+                } else {
+                    val car =
+                        Car(car?.id!!, name.toString(), address.toString(), typecar.toString())
                     carViewModel.update(car)
                 }
-                findNavController().popBackStack()//untuk dismiss halaman ini
             }
+
+                findNavController().popBackStack()//untuk dismiss halaman ini
 
         }
         binding.deleteButton.setOnClickListener {

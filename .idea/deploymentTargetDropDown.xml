@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\p'thoex\.android\avd\ARMobilApp.avd" />
+            <value value="C:\Users\p'thoex\.android\avd\ipong.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-07-02T16:12:13.847359700Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-07-05T09:48:12.458702200Z" />
   </component>
 </project>

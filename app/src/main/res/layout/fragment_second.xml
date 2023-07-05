@@ -13,7 +13,7 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -25,17 +25,18 @@
         <EditText
             android:id="@+id/nameEditText"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/addressTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/nameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/addressTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -48,31 +49,38 @@
             android:id="@+id/addressEditText"
             android:layout_width="0dp"
             android:layout_height="48dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintEnd_toEndOf="@+id/addressTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/addressTextView"
+            app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 
         <TextView
-            android:id="@+id/jenismobiltextView3"
+            android:id="@+id/typecarTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="jenis mobil"
+            android:layout_height="19dp"
+            android:layout_marginTop="16dp"
+            android:text="Jenis Mobil"
+            app:layout_constraintBottom_toBottomOf="@+id/addressEditText"
             app:layout_constraintEnd_toEndOf="@+id/addressEditText"
-            app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/addressEditText"
-            tools:layout_editor_absoluteY="195dp" />
+            app:layout_constraintTop_toBottomOf="@+id/addressEditText"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/jenismobileditTextText"
+            android:id="@+id/typecarEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="text"
-            app:layout_constraintEnd_toEndOf="@+id/jenismobiltextView3"
-            app:layout_constraintStart_toStartOf="@+id/jenismobiltextView3"
-            app:layout_constraintTop_toBottomOf="@+id/jenismobiltextView3" />
+            app:layout_constraintEnd_toEndOf="@+id/typecarTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/typecarTextView"
+            app:layout_constraintTop_toBottomOf="@+id/typecarTextView" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -86,26 +94,24 @@
 
 
             <Button
-                android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="@string/previous"
-                 />
-
-            <Button
                 android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="40dp"
-                android:text="Hapus"
-                />
+                android:layout_marginEnd="4dp"
+                android:visibility="gone"
+                android:text="Hapus" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="@string/previous" />
+
+
 
         </LinearLayout>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
